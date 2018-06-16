@@ -8,6 +8,7 @@ import java.util.Random;
 
 public class Main {
 	public static void main(String[] args) {
+
 		List<String> napisy = new ArrayList<>();
 		napisy.add("Ala");
 		napisy.add("ma");
@@ -17,7 +18,7 @@ public class Main {
 		napisy.add("kot pije mleko");
 
 		System.out.println("5 elementowa lista: " + napisy);
-
+		System.out.println(napisy.get(3));
 		napisy.remove(0);
 		System.out.println("Usunąłem 1 element: " + napisy);
 		napisy.remove(resztaZdania);

@@ -1,3 +1,4 @@
+import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -8,12 +9,140 @@ import static org.assertj.core.api.Fail.fail;
 class FizzBuzzTest {
 
 	// this is how a test look like
-	@DisplayName("do nothing - this pseudo test is here only to show how to create your own tests")
 	@Test
-	void nothing() {
-		// this is how you write assertions
-		assertThat(1).isEqualTo(1);
-		assertThat(1).isNotEqualTo(2);
-		fail("remove this pseudo test and start writing your own real tests");
+	void fizzBuzzTest(){
+		//given
+		int number =1;
+		//when
+		String msg = FizzBuzz.msg(number);
+		//then
+		Assertions.assertThat(msg).isEqualTo("1");
+
+	}
+	@Test
+	void fizzDivByThree(){
+		//given
+		int number=9;
+
+		//when
+		String msg = FizzBuzz.msg(number);
+
+		//then
+
+		Assertions.assertThat(msg).isEqualTo("Fizz");
+
+	}
+	@Test
+	void fizzDivByFive(){
+		//given
+		int number=5;
+
+		//when
+		String msg = FizzBuzz.msg(number);
+
+		//then
+
+		Assertions.assertThat(msg).isEqualTo("Buzz");
+
+	}
+	@Test
+	void fizzDivByFiveteen(){
+		//given
+		int number=15;
+
+		//when
+		String msg = FizzBuzz.msg(number);
+
+		//then
+
+		Assertions.assertThat(msg).isEqualTo("FizzBuzz");
+
+	}@Test
+	void fizzDivByTen(){
+		//given
+		int number=10;
+
+		//when
+		String msg = FizzBuzz.msg(number);
+
+		//then
+
+		Assertions.assertThat(msg).isEqualTo("Buzz");
+
+	}
+	@Test
+	void primeNumber(){
+		//given
+		int number=1;
+
+		//when
+		String msg = FizzBuzz.msg(number);
+
+		//then
+
+		Assertions.assertThat(msg).isEqualTo("Whizz");
+
+	}@Test
+	void secondPrimeNumber(){
+		//given
+		int number=3;
+
+		//when
+		String msg = FizzBuzz.msg(number);
+
+		//then
+
+		Assertions.assertThat(msg).isEqualTo("FizzWhizz");
+
+	}
+	@Test
+	void thirdPrimeNumber(){
+		//given
+		int number=5;
+
+		//when
+		String msg = FizzBuzz.msg(number);
+
+		//then
+
+		Assertions.assertThat(msg).isEqualTo("BuzzWhizz");
+
+	}@Test
+	void fourthPrimeNumber(){
+		//given
+		int number=7;
+
+		//when
+		String msg = FizzBuzz.msg(number);
+
+		//then
+
+		Assertions.assertThat(msg).isEqualTo("Whizz");
+
+	}
+	@Test
+	void fivthPrimeNumber(){
+		//given
+		int number=11;
+
+		//when
+		String msg = FizzBuzz.msg(number);
+
+		//then
+
+		Assertions.assertThat(msg).isEqualTo("Whizz");
+
+	}@Test
+	void sixthPrimeNumber(){
+		//given
+		int number=13;
+
+		//when
+		String msg = FizzBuzz.msg(number);
+
+		//then
+
+		Assertions.assertThat(msg).isEqualTo("Whizz");
+
 	}
 }
