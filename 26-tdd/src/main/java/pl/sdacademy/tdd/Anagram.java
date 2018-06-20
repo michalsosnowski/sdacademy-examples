@@ -1,10 +1,11 @@
+package pl.sdacademy.tdd;
 import java.util.*;
 
 
 public class Anagram {
-	public static void main(String[]args){
-		result("so");
-	}
+	/*public static void main(String[]args){
+		result("sor");
+	}*/
 	public static String result(String word) {
 
 		List<String> sequence = new ArrayList<>();
@@ -13,18 +14,17 @@ public class Anagram {
 		for (int i = 0; i < cha.length; i++) {
 			sequence.add(cha[i]);
 		}
-		Set<String> randomSeq= new HashSet<>();
+		Set<String> newWord= new HashSet<>();
 		for (int i = 0; i < cha.length; i++) {
 			for (int j = 0; j < cha.length; j++) {
 
-			randomSeq.add(cha[i] + cha[j]);
-			if (cha[i].equals(cha[i])) {
-				randomSeq.remove(randomSeq);
+			if (!cha[i].equals(cha[j])) {
+				newWord.add(cha[i] + cha[j]);
 
 			}
 		}}
-		System.out.println(sequence);
-		System.out.println(randomSeq);
-		return String.valueOf(randomSeq);
+//		System.out.println(sequence);
+//		System.out.println(newWord);
+		return String.valueOf(newWord);
 	}
 }
