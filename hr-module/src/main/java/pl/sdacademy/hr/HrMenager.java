@@ -1,6 +1,7 @@
 package pl.sdacademy.hr;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -33,5 +34,10 @@ class HrMenager {
 		return allEmployees.stream().filter(employee ->
 			employee.matches(phrase))
 			.collect(Collectors.toList());
+	}
+
+	public List<Employee> sortByFirstName() {
+		return allEmployees.stream().sorted().collect
+			(Collectors.toList());
 	}
 }

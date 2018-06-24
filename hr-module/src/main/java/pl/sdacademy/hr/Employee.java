@@ -1,6 +1,6 @@
 package pl.sdacademy.hr;
 
-class Employee {
+class Employee implements Comparable<Employee> {
 
 	private final String firstName;
 	private final String lastName;
@@ -33,5 +33,10 @@ class Employee {
 	boolean matches(String phrase) {
 		return firstName.contains(phrase) || lastName.contains(phrase) || dateOfBirth.contains
 			(phrase);
+	}
+
+	@Override
+	public int compareTo(Employee other) {
+		return firstName.compareTo(other.firstName);
 	}
 }
