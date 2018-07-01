@@ -42,10 +42,17 @@ public class SwingView {
 				LayoutManager layout = new GridLayout(3, 1);
 				row.setLayout(layout);
 
+
+				JButton button = new JButton("Search");
+				/*button.addActionListener(e -> {
+					adapter.sortByFirstName(tableModel);
+				});*/
+
+
 				JPanel filtrByPhrase = new JPanel();
 				filtrByPhrase.add(new JLabel("Filter:"));
 				filtrByPhrase.add(new JTextField("phrase"));
-				filtrByPhrase.add(new JButton("Ok"));
+				filtrByPhrase.add(button);
 				row.add(filtrByPhrase);
 
 
