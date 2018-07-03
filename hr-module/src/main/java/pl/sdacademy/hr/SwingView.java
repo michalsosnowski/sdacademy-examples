@@ -14,7 +14,6 @@ public class SwingView {
 		tableModel.addColumn("Date of Birth");
 
 
-
 		SwingUtilities.invokeLater(new Runnable() {
 
 			@Override
@@ -41,27 +40,31 @@ public class SwingView {
 				JPanel row = new JPanel();
 				LayoutManager layout = new GridLayout(3, 1);
 				row.setLayout(layout);
-
-
-				JButton button = new JButton("Search");
-				/*button.addActionListener(e -> {
-					adapter.sortByFirstName(tableModel);
-				});*/
-
+				JButton button = new JButton("Filtr");
 
 				JPanel filtrByPhrase = new JPanel();
 				filtrByPhrase.add(new JLabel("Filter:"));
-				filtrByPhrase.add(new JTextField("phrase"));
+				JTextField phrase = new JTextField("phrase");
+				filtrByPhrase.add(phrase);
 				filtrByPhrase.add(button);
 				row.add(filtrByPhrase);
+
+				button.addActionListener(e -> {
+					adapter.searchByPhrase(tableModel, phrase.getText());
+				});
 
 
 				JPanel searchNameFilter = new JPanel();
 				searchNameFilter.add(new JLabel("Search by First Name"));
-				searchNameFilter.add(new JTextField("first name"));
-				searchNameFilter.add(new JButton("Ok"));
+				JTextField lastNameTextField = new JTextField("first name");
+				searchNameFilter.add(lastNameTextField);
+				JButton buttonSearchByFirstName = new JButton("Ok");
+				searchNameFilter.add(buttonSearchByFirstName);
 				row.add(searchNameFilter);
 				jFrame.add(row);
+				buttonSearchByFirstName.addActionListener(e -> {
+					adapter.searchByLastName(tableModel, lastNameTextField.getText());
+				});
 			}
 
 			private void addSecondRow(JFrame jFrame) {
@@ -76,8 +79,8 @@ public class SwingView {
 
 				JButton addButton = new JButton("Add");
 				JTextField firstNameTextField = new JTextField("firstName");
-				JTextField lastNameTextField = new JTextField("firstName");
-				JTextField dateOfBirthTextField = new JTextField("firstName");
+				JTextField lastNameTextField = new JTextField("lastName");
+				JTextField dateOfBirthTextField = new JTextField("dateOfBirth");
 				addButton.addActionListener(e -> {
 					adapter.addNewEmployee(tableModel, firstNameTextField.getText(),
 						lastNameTextField.getText(), dateOfBirthTextField.getText());

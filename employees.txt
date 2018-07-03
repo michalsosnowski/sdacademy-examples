@@ -1,7 +1,5 @@
-firstName firstName firstName
-firstName firstName firstName
-firstName uh firstName
-firstName aa firstName
-a aa firstName
-dd aa firstName
-dd aa firstName
+firstName lastName dateOfBirth
+firstName lastName dateOfBirth
+firstName lastName dateOfBirth
+Marta Sosnowska 01-02-1990
+Marta Sosnowska 01-02-1990

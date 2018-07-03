@@ -1,7 +1,6 @@
 package pl.sdacademy.hr;
 import java.util.List;
 
-
 import javax.swing.table.DefaultTableModel;
 
 public class HrManagerSwingAdapter {
@@ -28,6 +27,21 @@ public class HrManagerSwingAdapter {
 		tableModel.getDataVector().clear();
 		List<Employee> allEmployees = hrMenager.sortByFirstName();
 		fillAllRows(tableModel, allEmployees);
+	}
+	public void searchByPhrase(DefaultTableModel tableModel,String phrase) {
+		List<Employee> searchedEmployees = hrMenager.searchByPhrase(phrase);
+		tableModel.getDataVector().clear();
+		for (Employee employee : searchedEmployees) {
+			tableModel.addRow(new Object[]{employee.getFirstName(), employee.getLastName(), employee
+				.getDateOfBirth()});
+		}
+	}public void searchByLastName(DefaultTableModel tableModel,String lastName) {
+		List<Employee> searchedEmployees = hrMenager.searchByLastName(lastName);
+		tableModel.getDataVector().clear();
+		for (Employee employee : searchedEmployees) {
+			tableModel.addRow(new Object[]{employee.getFirstName(), employee.getLastName(), employee
+				.getDateOfBirth()});
+		}
 	}
 
 	public void sortByLastName(DefaultTableModel tableModel) {
