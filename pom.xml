@@ -33,6 +33,7 @@
 		<module>25-swing</module>
 		<module>26-tdd</module>
 		<module>hr-module</module>
+		<module>28_wzorce_projektowe</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>sdacademy-examples</name>
@@ -112,6 +113,12 @@
 			<artifactId>mockito-core</artifactId>
 			<version>${mockito.version}</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.0</version>
+			<scope>provided</scope>
 		</dependency>
 	</dependencies>
 

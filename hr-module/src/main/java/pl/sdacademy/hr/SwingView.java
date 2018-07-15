@@ -55,7 +55,7 @@ public class SwingView {
 
 
 				JPanel searchNameFilter = new JPanel();
-				searchNameFilter.add(new JLabel("Search by First Name"));
+				searchNameFilter.add(new JLabel("Search by Last Name"));
 				JTextField lastNameTextField = new JTextField("first name");
 				searchNameFilter.add(lastNameTextField);
 				JButton buttonSearchByFirstName = new JButton("Ok");
