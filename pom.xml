@@ -34,6 +34,7 @@
 		<module>26-tdd</module>
 		<module>hr-module</module>
 		<module>28_wzorce_projektowe</module>
+		<module>tdd-car</module>
 	</modules>
 	<packaging>pom</packaging>
 	<name>sdacademy-examples</name>
