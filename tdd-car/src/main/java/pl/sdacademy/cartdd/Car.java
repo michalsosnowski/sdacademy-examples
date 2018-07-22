@@ -2,10 +2,11 @@ package pl.sdacademy.cartdd;
 
 public class Car {
 
-	private int volume;
-	private int tank;
+	private int maxVolumeOfFuel;
+	private int currentVolumeOfFuel;
 	private TypeFuel typeFuel;
 	private int clean;
+	private int tires;
 
 	public int getClean() {
 		return clean;
@@ -18,16 +19,16 @@ public class Car {
 	public static Car create(int tank) {
 
 		Car car = new Car();
-		car.tank=tank;
+		car.currentVolumeOfFuel =tank;
 		return  car;
 	}
 
-	public int getVolume() {
-		return volume;
+	public int getMaxVolumeOfFuel() {
+		return maxVolumeOfFuel;
 	}
 
-	public void setVolume(int volume) {
-		this.volume = volume;
+	public void setMaxVolumeOfFuel(int maxVolumeOfFuel) {
+		this.maxVolumeOfFuel = maxVolumeOfFuel;
 	}
 
 	public TypeFuel getTypeFuel() {
@@ -38,12 +39,19 @@ public class Car {
 		this.typeFuel = typeFuel;
 	}
 
-	int getTank() {
-		return tank;
+	int getCurrentVolumeOfFuel() {
+		return currentVolumeOfFuel;
 	}
 
-	 void setTank(int tank) {
-		this.tank = tank;
+	 void setCurrentVolumeOfFuel(int currentVolumeOfFuel) {
+		this.currentVolumeOfFuel = currentVolumeOfFuel;
 	}
 
+	public void setTires(int tires) {
+		this.tires = tires;
+	}
+
+	public int getTires() {
+		return tires;
+	}
 }

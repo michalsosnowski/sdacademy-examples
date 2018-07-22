@@ -14,25 +14,25 @@ class FuelStationTest {
 	void setup() {
 		car = new Car();
 		fuelStation = new FuelStation();
-		car.setVolume(200);
+		car.setMaxVolumeOfFuel(200);
 	}
 
 	@DisplayName("Should check tank is refuel to full")
 	@Test
 	void test00() {
 		//given
-		car.setTank(20);
+		car.setCurrentVolumeOfFuel(20);
 		//when
 		fuelStation.refuelToFull(car);
 		//then
-		assertThat(car.getTank()).isEqualTo(car.getVolume());
+		assertThat(car.getCurrentVolumeOfFuel()).isEqualTo(car.getMaxVolumeOfFuel());
 	}
 
 	@DisplayName("Should return price of tanked full fuel")
 	@Test
 	void test01() {
 		//given
-		car.setTank(20);
+		car.setCurrentVolumeOfFuel(20);
 		car.setTypeFuel(TypeFuel.DIESEL);
 
 		//when
@@ -46,7 +46,7 @@ class FuelStationTest {
 	@Test
 	void test02() {
 		//given
-		car.setTank(20);
+		car.setCurrentVolumeOfFuel(20);
 		int fuel = 30;
 		int cena = 5;
 		//when

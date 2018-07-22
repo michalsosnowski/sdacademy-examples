@@ -4,15 +4,15 @@ package pl.sdacademy.cartdd;
 
 
  	void refuelTank(Car car, int fuel){
- 		car.setTank(car.getTank() + fuel);
+ 		car.setCurrentVolumeOfFuel(car.getCurrentVolumeOfFuel() + fuel);
 	}
 
 	 void refuelToFull(Car car){
-		car.setTank(car.getVolume());
+		car.setCurrentVolumeOfFuel(car.getMaxVolumeOfFuel());
 	}
 
 	 int payForFuelToFull(Car car) {
-		return (car.getVolume() - car.getTank()) * car.getTypeFuel().getPrice() ;
+		return (car.getMaxVolumeOfFuel() - car.getCurrentVolumeOfFuel()) * car.getTypeFuel().getPrice() ;
 	}
 
 	 public int payForFuel(int cena, int fuel) {

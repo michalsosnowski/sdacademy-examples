@@ -1,7 +1,8 @@
 package pl.sdacademy.cartdd;
 
 public class CarWash {
-	public int clean(Car car) {
-		return car.getClean();
+	public void clean(Car car) {
+		 car.setClean(100);
+
 	}
 }

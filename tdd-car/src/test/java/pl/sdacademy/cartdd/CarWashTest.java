@@ -22,18 +22,11 @@ public class CarWashTest {
 		//given
 		car.setClean(20);
 		//when
-		int cleanCar = carWash.clean(car);
+		carWash.clean(car);
+		int cleanCar = car.getClean();
 		//then
 		assertThat(cleanCar).isEqualTo(100);
 	}
-	@DisplayName("Should clean a car with given dirt level")
-	@Test
-	void test01() {
-		//given
-		car.setClean(40);
-		//when
-		int cleanCar = carWash.clean(car);
-		//then
-		assertThat(cleanCar).isEqualTo(car.getClean());
-	}
+
+
 }
