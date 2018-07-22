@@ -16,9 +16,9 @@ public class RaceTest {
 		car.setClean(100);
 		car.setCurrentVolumeOfFuel(60);
 		//when
-		int[] lap = race.nLaps(car, 1);
+		race.nLaps(car, 1);
 		//then
-		assertThat(lap).isEqualTo(new int[]{58, 99, 77});
+		assertThat(car.getCurrentVolumeOfFuel()).isEqualTo(58);
 	}
 	@DisplayName("Should change used values of fuel, clean and tires per hundred laps")
 	@Test
@@ -30,8 +30,10 @@ public class RaceTest {
 		car.setClean(100);
 		car.setCurrentVolumeOfFuel(60);
 		//when
-		int[] laps = race.nLaps(car, 100);
+		race.nLaps(car, 100);
 		//then
-		assertThat(laps).isEqualTo(new int[]{-140, 0, -200});
+		assertThat(car.getCurrentVolumeOfFuel()).isEqualTo(-140);
+		assertThat(car.getClean()).isEqualTo( 0);
+		assertThat(car.getTires()).isEqualTo( -200);
 	}
 }
